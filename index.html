@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>個人期末報告</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+
+<head>
+  <title>我的網頁</title>
+  <style>
+    h1 {
+      color: red;
+      -webkit-text-stroke: 2px black;
+      text-shadow:
+        2px 2px 0 pink,
+        -2px 2px 0 pink,
+        2px -2px 0 pink,
+        -2px -2px 0 pink;
+      font-family: "Arial", sans-serif;
+    }
+
+    .video-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .video-description {
+      font-size: 18px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>拳上鹿死誰手</h1>
+
+  <img src="https://cdn.ftvnews.com.tw/manasystem/FileData/News/09a18510-c799-40e6-926b-4bd977468062.jpg" alt="我的偶像圖片" />
+
+  <div class="video-container">
+    <!-- 文字說明 -->
+    <div class="video-description">臭臭魔法加上賴皮攻擊</div>
+
+    <!-- 嵌入影片 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EyX7v3YJD4g?si=zCoFP-ZfeHu1oGAp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</body>
+
+<body onLoad="show()">
+  <div id="ncyu">
+    <img id="ico">
+  </div>
+</body>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猜猜誰會贏</title>
+  <style>
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: white;
+      z-index: 10;
+    }
+
+    #mainContent {
+      display: none;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .choice-text {
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 20px;
+      color: #4CAF50;
+    }
+
+    .choice-text:hover {
+      color: #FFC107;
+    }
+
+    #buttonContainer {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-button {
+      padding: 10px 15px;
+      background-color: #0077b5;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .social-button:hover {
+      background-color: #005c8a;
+    }
+
+    #bulletin-board {
+      margin-top: 30px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    #bulletin-board div {
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #e0e0e0;
+    }
+
+    #message-box {
+      margin-top: 20px;
+    }
+
+    #message-box input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #message-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #message-box button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="overlay">
+    <div>
+      <h1>猜猜誰會贏？</h1>
+      <p>選擇 '統神' 或 '蹦闆' 來猜誰會贏：</p>
+      <div class="choice-text" onclick="showMessage('統神')">統神</div>
+      <div class="choice-text" onclick="showMessage('蹦闆')">蹦闆</div>
+    </div>
+  </div>
+
+  <div id="mainContent">
+    <h2>歡迎來到網頁！</h2>
+    <p>這是你進入網頁後看到的內容。</p>
+  </div>
+
+  <div id="bulletin-board">
+    <h3>留言區：</h3>
+  </div>
+
+  <div id="message-box">
+    <input type="text" id="user-message" placeholder="輸入訊息...">
+    <button onclick="postMessage()">發佈</button>
+  </div>
+
+  <div id="buttonContainer">
+    <button class="social-button" onclick="window.open('https://www.instagram.com/godtoneasia/?hl=zh-tw')">統神 IG</button>
+    <button class="social-button" onclick="window.open('https://www.instagram.com/1988.bomb/?hl=zh-tw')">蹦闆 IG</button>
+  </div>
+
+  <script>
+    function showMessage(choice) {
+      alert(choice + " 會贏！");
+      document.getElementById("overlay").style.display = 'none';
+      document.getElementById("mainContent").style.display = 'block';
+    }
+
+    function postMessage() {
+      var message = document.getElementById('user-message').value;
+      if (message) {
+        var messageDiv = document.createElement('div');
+        messageDiv.textContent = message;
+        document.getElementById('bulletin-board').appendChild(messageDiv);
+        document.getElementById('user-message').value = '';
+      } else {
+        alert('請輸入訊息');
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
